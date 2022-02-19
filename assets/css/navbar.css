@@ -1,0 +1,23 @@
+#ul-nb {
+  list-style: none;
+  overflow:hidden;
+  background:red;
+  margin:0;
+  padding:0;  
+}
+#ul-nb li a {
+  text-align:center;
+  padding:10px;
+  width:80px;
+}
+
+#ul-nb li {
+  float:left;
+}
+
+#ul-nb li:hover {
+  background:brown;
+}
+a {
+  display:block;
+} 
