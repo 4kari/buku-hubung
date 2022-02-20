@@ -1,2 +1,2 @@
 # buku-hubung
-# web based
+# web hybrid

@@ -35,17 +35,15 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Masuk Akun</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" action="backend/login.php" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInput" placeholder="Nama pengguna">
+                                    <input type="text" name="username" class="form-control form-control-user" id="exampleInput" placeholder="Nama pengguna">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" id="exampleInput" placeholder="Password">
+                                    <input type="password" name="password" class="form-control form-control-user" id="exampleInput" placeholder="Password">
                                 </div>
                                 
-                                <a href="profil-user.php" class="btn btn-success btn-user btn-block">
-                                    Masuk
-                                </a>
+                                <input type="submit" value="Masuk" class="btn btn-success btn-user btn-block">
                                 <hr>
                             </form>
                             <hr>
