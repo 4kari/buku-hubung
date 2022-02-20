@@ -1,10 +1,10 @@
 <?php
-require '../config/db_connect.php';
+require 'connect.php';
+        
+    if (isset($_POST['username']) && isset($_POST['password'])) {
 
-    if (isset($_POST['login']) && $_POST['login'] == "LOGIN" ) {
-
-        $user = $_POST['user'];
-        $pass = MD5($_POST['pass']);
+        $user = $_POST['username'];
+        $pass = MD5($_POST['password']);
 
         $query    = $conn->query("SELECT * FROM user WHERE username = '$user' and password = '$pass'", PDO::FETCH_ASSOC);
         $data     = $query->fetch();
@@ -16,8 +16,10 @@ require '../config/db_connect.php';
             $_SESSION['level'] = $data['level'];
             header('location:index.php');
         }else {
-            $message="* Username atau Password salah";
+            // $message="* Username atau Password salah";
         }
+    }else{
+        // $message="* Silahkan isi Username dan Password dengan benar"
     }
 
 ?>
