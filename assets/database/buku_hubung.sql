@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2022 at 07:15 PM
+-- Generation Time: Feb 21, 2022 at 09:26 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.19
 
@@ -83,6 +83,15 @@ CREATE TABLE `level` (
   `keterangan` varchar(36) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `level`
+--
+
+INSERT INTO `level` (`id`, `keterangan`) VALUES
+(1, 'guru'),
+(2, 'wali'),
+(3, 'alumni');
+
 -- --------------------------------------------------------
 
 --
@@ -122,7 +131,8 @@ CREATE TABLE `siswa` (
   `nama` varchar(60) NOT NULL,
   `kelas` int(11) NOT NULL,
   `absen` int(11) DEFAULT NULL,
-  `no_hp` varchar(15) DEFAULT NULL
+  `no_hp` varchar(15) DEFAULT NULL,
+  `wali_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -149,6 +159,14 @@ CREATE TABLE `tipe` (
   `keterangan` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tipe`
+--
+
+INSERT INTO `tipe` (`id`, `keterangan`) VALUES
+(1, 'akademik'),
+(2, 'karakter');
+
 -- --------------------------------------------------------
 
 --
@@ -159,6 +177,16 @@ CREATE TABLE `tipe_berita` (
   `id` int(11) NOT NULL,
   `keterangan` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tipe_berita`
+--
+
+INSERT INTO `tipe_berita` (`id`, `keterangan`) VALUES
+(1, 'pengumuman'),
+(2, 'Tugas'),
+(3, 'Jadwal Ulangan'),
+(4, 'Hari Libur');
 
 -- --------------------------------------------------------
 
@@ -184,8 +212,7 @@ CREATE TABLE `wali` (
   `nama` varchar(60) NOT NULL,
   `alamat` varchar(128) NOT NULL,
   `no_hp` varchar(15) NOT NULL,
-  `id` int(11) NOT NULL,
-  `id_murid` int(11) NOT NULL
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -246,7 +273,8 @@ ALTER TABLE `pesan`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `siswa_kelas` (`kelas`);
+  ADD KEY `siswa_kelas` (`kelas`),
+  ADD KEY `siswa_wali` (`wali_id`);
 
 --
 -- Indexes for table `skor`
@@ -280,8 +308,7 @@ ALTER TABLE `user`
 --
 ALTER TABLE `wali`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `wali_user` (`username`),
-  ADD KEY `wali_siswa` (`id_murid`);
+  ADD KEY `wali_user` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -309,7 +336,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mapel`
@@ -339,13 +366,13 @@ ALTER TABLE `skor`
 -- AUTO_INCREMENT for table `tipe`
 --
 ALTER TABLE `tipe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tipe_berita`
 --
 ALTER TABLE `tipe_berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wali`
@@ -393,7 +420,8 @@ ALTER TABLE `pesan`
 -- Constraints for table `siswa`
 --
 ALTER TABLE `siswa`
-  ADD CONSTRAINT `siswa_kelas` FOREIGN KEY (`kelas`) REFERENCES `kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `siswa_kelas` FOREIGN KEY (`kelas`) REFERENCES `kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `siswa_wali` FOREIGN KEY (`wali_id`) REFERENCES `wali` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `skor`
@@ -412,7 +440,6 @@ ALTER TABLE `user`
 -- Constraints for table `wali`
 --
 ALTER TABLE `wali`
-  ADD CONSTRAINT `wali_siswa` FOREIGN KEY (`id_murid`) REFERENCES `siswa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `wali_user` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
