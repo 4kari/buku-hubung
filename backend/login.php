@@ -14,7 +14,7 @@ require 'connect.php';
 
             $_SESSION['user'] = $data['username'];
             $_SESSION['level'] = $data['level'];
-            header('location:index.php');
+            header('location:auth.php');
         }else {
             // $message="* Username atau Password salah";
         }
