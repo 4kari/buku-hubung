@@ -12,7 +12,8 @@ require 'connect.php';
         if ($num_rows > 0) {
             session_start();
 
-            $_SESSION['user'] = $data['username'];
+            $_SESSION['user'] = $data['nama'];
+            $_SESSION['username'] = $data['username'];
             $_SESSION['level'] = $data['level'];
             header('location:auth.php');
         }else {
