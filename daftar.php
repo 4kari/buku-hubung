@@ -41,20 +41,24 @@
 
                                 </h1>
                             </div>
-                            <form class="user">
+                            <form class="user" action="backend/register.php" method="post">
                                 
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInput" placeholder="Nama pengguna">
+                                    <input type="text" name="nama" class="form-control form-control-user" id="exampleInput" placeholder="Nama pengguna">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInput" placeholder="Alamat">
+                                    <input type="text" name="username" class="form-control form-control-user" id="exampleInput" placeholder="Username">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInput" placeholder="No. Telepon">
+                                    <input type="text" name="alamat" class="form-control form-control-user" id="exampleInput" placeholder="Alamat">
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" name="no_hp" class="form-control form-control-user" id="exampleInput" placeholder="No. Telepon">
+                                </div>
+                                
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" name="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
@@ -62,9 +66,7 @@
                                             id="exampleRepeatPassword" placeholder="Konfirmasi Password">
                                     </div>
                                 </div>
-                                <a href="profil-user.php" class="btn btn-success btn-user btn-block">
-                                    Daftar Akun
-                                </a>
+                                <input type="submit" value="Daftar Akun" class="btn btn-success btn-user btn-block">
                                 <hr>
                             </form>
                             <hr>
