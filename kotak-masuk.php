@@ -63,31 +63,31 @@
                         <ul class="list-unstyled chat-list mt-2 mb-0">
 
                             <li class="clearfix active">
-                                <img src="assets/img/avatar-cewek.png" alt="avatar">
+                                <img class="img-thumbnail" src="assets/img/avatar-cewek.png" alt="avatar">
                                 <div class="about">
                                     <div class="name">Hartiningsih</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i><a class="stretched-link" href="pesan.php">1 Pesan baru</a></div>
+                                    <div class="status"> <i class="fa fa-circle online"></i><a href="pesan.php">1 Pesan baru</a></div>
                                 </div>
                             </li>
                             <li class="clearfix">
-                                <img src="assets/img/avatar-cewek.png" alt="avatar">
+                                <img class="img-thumbnail" src="assets/img/avatar-cewek.png" alt="avatar">
                                 <div class="about">
                                     <div class="name">Rika Wahyuni</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a class="stretched-link" href="pesan.php">0 Pesan baru</a></div>
+                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a href="pesan.php">0 Pesan baru</a></div>
                                 </div>
                             </li>
                             <li class="clearfix">
-                                <img src="assets/img/avatar-profil.png" alt="avatar">
+                                <img class="img-thumbnail" src="assets/img/avatar-profil.png" alt="avatar">
                                 <div class="about">
                                     <div class="name">Agus Muhammad</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i></i><a class="stretched-link" href="pesan.php">2 Pesan baru</a></div>
+                                    <div class="status"> <i class="fa fa-circle online"></i></i><a href="pesan.php">2 Pesan baru</a></div>
                                 </div>
                             </li>
                             <li class="clearfix">
-                                <img src="assets/img/avatar-cewek.png" alt="avatar">
+                                <img class="img-thumbnail" src="assets/img/avatar-cewek.png" alt="avatar">
                                 <div class="about">
                                     <div class="name">Dewi Astutik</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a class="stretched-link" href="pesan.php">0 Pesan baru</a></div>
+                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a href="pesan.php">0 Pesan baru</a></div>
                                 </div>
                             </li>
 

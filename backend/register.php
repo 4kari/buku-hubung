@@ -1,10 +1,10 @@
 <?php
 require 'connect.php';
-
-// if (!$_SESSION['level']) {
-//   header('location:login.php');
-// }
-$_POST['level']="1";
+session_start();
+if (isset($_SESSION['level'])) {
+  header('location:auth.php');
+}
+$_POST['level']="2";
 $_POST['nip']=$_POST['username'];
 if (isset($_POST['nama']) && (isset($_POST['username']) || isset($_POST['nip'])) && isset($_POST['alamat']) && isset($_POST['no_hp']) && isset($_POST['password']) && isset($_POST['level'])) {
     $nama       = $_POST['nama'];
@@ -19,6 +19,7 @@ if (isset($_POST['nama']) && (isset($_POST['username']) || isset($_POST['nip']))
     $data_user = $query->fetch();
     if($data_user){
         echo "A";
+        header('location:auth.php');
         // $message = "Username sudah ada";
     }else{
         echo "B";
@@ -74,7 +75,7 @@ if (isset($_POST['nama']) && (isset($_POST['username']) || isset($_POST['nip']))
         }
 
         if ($query) {
-            header('location:../login.php');
+            header('location:auth.php');
         }
     }
 }
