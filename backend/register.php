@@ -4,8 +4,7 @@ session_start();
 if (isset($_SESSION['level'])) {
   header('location:auth.php');
 }
-$_POST['level']="2";
-$_POST['nip']=$_POST['username'];
+
 if (isset($_POST['nama']) && (isset($_POST['username']) || isset($_POST['nip'])) && isset($_POST['alamat']) && isset($_POST['no_hp']) && isset($_POST['password']) && isset($_POST['level'])) {
     $nama       = $_POST['nama'];
     if(isset($_POST['username'])){$username = $_POST['username'];}
@@ -75,7 +74,9 @@ if (isset($_POST['nama']) && (isset($_POST['username']) || isset($_POST['nip']))
         }
 
         if ($query) {
-            header('location:auth.php');
+            $wali = $conn->query("SELECT * FROM wali WHERE username = '$username'", PDO::FETCH_ASSOC)->fetch();
+            $id=$wali['id'];
+            header("location:../daftar-siswa.php/?id=".$id);
         }
     }
 }
