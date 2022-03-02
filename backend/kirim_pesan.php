@@ -6,7 +6,7 @@ session_start();
 $username = $_SESSION['user'];
 $id = $_POST['id_chat'];
 $pengirim = $_POST['pengirim'];
-$pesan = $_POST['pesan']
+$pesan = $_POST['pesan'];
 $waktu = time();
 //menambahkan pesan ke tabel pesan berdasarkan id_chat
 $sql    = "INSERT INTO pesan (id_chat, pengirim, pesan, waktu) VALUES (:id_chat, :pengirim, :pesan, :waktu)";
