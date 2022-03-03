@@ -1,5 +1,4 @@
-<?php include('backend/lihat_chat.php');
-var_dump($data_pesan);?>
+<?php include('backend/lihat_chat.php');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,18 +83,25 @@ var_dump($data_pesan);?>
     <h2>Chat Messages</h2>
 
     <!-- looping disini -->
-    <div class="container">
-        <img src="assets/img/avatar-cewek.png" alt="Avatar" style="width:100%;">
-        <p>Hello. How are you today?</p>
-        <span class="time-right">11:00</span>
-    </div>
+    <?php if($data_pesan){ ?>
+        <?php foreach($data_pesan as $dp)?>
+            <?php if($dp['pengirim']==$_SESSION['username']){ ?>
+                <div class="container darker">
+                    <img src="assets/img/avatar-profil.png" alt="Avatar" class="right" style="width:100%;">
+                    <p><?= $dp['pesan']; ?></p>
+                    <span class="time-left"><?= $dp['waktu']; ?></span>
+                </div>
+            <?php }else{ ?>
+                <div class="container">
+                    <img src="assets/img/avatar-cewek.png" alt="Avatar" style="width:100%;">
+                    <p><?= $dp['pesan']; ?></p>
+                    <span class="time-right"><?= $dp['waktu']; ?></span>
+                </div>
+            <?php } ?>
+        <?php } ?>
+    <?php } ?>
 
-    <div class="container darker">
-        <img src="assets/img/avatar-profil.png" alt="Avatar" class="right" style="width:100%;">
-        <p>Hey! I'm fine. Thanks for asking!</p>
-        <span class="time-left">11:01</span>
-    </div>
-
+    <!-- tombol chat -->
     <div class="m-4" style="position: fixed; bottom: 0px; right: 0px;">
         <button class="btn btn-primary" id="tombolchat" style="border-radius: 100%;" onClick="openForm()"><i class='fas fa-comments'></i></button>
     </div>
