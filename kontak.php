@@ -1,3 +1,4 @@
+<?php include('backend/get_kontak.php');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,65 +53,25 @@
 
     </nav>
 
-    <!-- looping disini -->
     <div class="container pt-4">
+        <?php foreach($data as $d){?>
         <div class="row pt-4 mt-4">
             <div class="col-sm-2">
                 <img style="width:140px; height:140px" src="assets/img/avatar-cewek.png" alt="Avatar">
             </div>
             <div class="col-sm-8">
-                <h2>Our Values</h2>
-                <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>      
-                <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
-                <a href="">buat pesan</a>
+                <h2><?=$d['nama']?></h2>
+                <h4><strong>Jabatan</strong> <?=$d['level']?></h4>      
+                <p><strong>no_hp</strong> <?=$d['no_hp']?></p>
+                <?phpif($d['chat']){?>
+                    <div class="status"> <i class="fa fa-circle online"></i><a href="pesan.php/?id=<?=$d['chat']?>"><?=$d['pesan'];?> Pesan baru</a></div>
+                <?php}else{?>
+                    <a href="backend/mulai_chat/?username=<?= $d['username']; ?>"></a>
+                <?php}?>
             </div>
         </div>
+        <?php } ?>
     </div>
-
-    <!-- <div class="container">
-        <div class="row  d-flex justify-content-center">
-
-            <div class="col col-md-6">
-                <div class="card col-md-12 mt-4">
-                    <div id="plist" class="people-list">
-                        <ul class="list-unstyled chat-list mt-2 mb-0">
-                            <li class="clearfix active">
-                                <img class="img-thumbnail" src="assets/img/avatar-cewek.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Hartiningsih</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i><a href="pesan.php">1 Pesan baru</a></div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img class="img-thumbnail" src="assets/img/avatar-cewek.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Rika Wahyuni</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a href="pesan.php">0 Pesan baru</a></div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img class="img-thumbnail" src="assets/img/avatar-profil.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Agus Muhammad</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i></i><a href="pesan.php">2 Pesan baru</a></div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img class="img-thumbnail" src="assets/img/avatar-cewek.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Dewi Astutik</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a href="pesan.php">0 Pesan baru</a></div>
-                                </div>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>

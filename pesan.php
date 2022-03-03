@@ -1,3 +1,5 @@
+<?php include('backend/lihat_chat.php');
+var_dump($data_pesan);?>
 <!DOCTYPE html>
 <html lang="en">
 
