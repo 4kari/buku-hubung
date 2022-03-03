@@ -15,14 +15,15 @@ if($_SESSION['level']==1){
         ':id_guru' => $username,
         ':id_wali' => $user2,
     ));
-    
+    $id = $conn->query("SELECT * FROM chat WHERE id_guru = '$username' and id_wali = '$user2'" , PDO::FETCH_ASSOC)->fetch()['id'];
 }else{
     $query->execute(array(
         ':id_guru' => $user2,
         ':id_wali' => $username,
     ));
+    $id = $conn->query("SELECT * FROM chat WHERE id_guru = '$user2' and id_wali = '$username'" , PDO::FETCH_ASSOC)->fetch()['id'];
 }
-
+header("location:../pesan.php/?id=".$id);
 //=======================//
 
 ?>
