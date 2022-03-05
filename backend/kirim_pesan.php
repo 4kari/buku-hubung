@@ -5,7 +5,7 @@ require 'connect.php';
 session_start();
 $username = $_SESSION['user'];
 $id = $_POST['id_chat'];
-$pengirim = $_POST['pengirim'];
+$pengirim = $_SESSION['username'];
 $pesan = $_POST['pesan'];
 $waktu = time();
 //menambahkan pesan ke tabel pesan berdasarkan id_chat
@@ -18,5 +18,5 @@ $query  = $conn->prepare($sql);
             ':waktu' => $waktu,
         ));
 //=======================//
-
+header("location:../pesan.php/?id=".$id);
 ?>
