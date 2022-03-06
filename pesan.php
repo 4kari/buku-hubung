@@ -77,7 +77,7 @@
     <nav class="navbar navbar-expand-sm bg-light justify-content-right fixed-top">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="kotak-masuk.php"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../kontak.php"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </nav>
@@ -88,13 +88,13 @@
         <?php foreach($data_pesan as $dp){?>
             <?php if($dp['pengirim']==$_SESSION['username']){ ?>
                 <div class="container darker">
-                    <img src="assets/img/avatar-profil.png" alt="Avatar" class="right" style="width:100%;">
+                    <img src="../assets/img/avatar-profil.png" alt="Avatar" class="right" style="width:100%;">
                     <p><?= $dp['pesan']; ?></p>
                     <span class="time-left"><?= $dp['waktu']; ?></span>
                 </div>
             <?php }else{ ?>
                 <div class="container">
-                    <img src="assets/img/avatar-cewek.png" alt="Avatar" style="width:100%;">
+                    <img src="../assets/img/avatar-cewek.png" alt="Avatar" style="width:100%;">
                     <p><?= $dp['pesan']; ?></p>
                     <span class="time-right"><?= $dp['waktu']; ?></span>
                 </div>
