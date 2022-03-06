@@ -63,7 +63,7 @@
                         <h2><?=$d['nama']?></h2>
                         <h4><strong>Jabatan</strong> <?=$d['level']?></h4>      
                         <p><strong>no_hp</strong> <?=$d['no_hp']?></p>
-                        <?php   if($d['pesan']>0){?>
+                        <?php   if(isset($d['chat'])){?>
                             <div class="status"> <i class="fa fa-circle online"></i><a href="pesan.php/?id=<?=$d['chat'];?>"><?=$d['pesan'];?> Pesan baru</a></div>
                         <?php   } else{ ?>
                             <a href="backend/mulai_chat.php/?username=<?= $d['username']; ?>">mulai percakapan baru</a>
