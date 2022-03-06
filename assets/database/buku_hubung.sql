@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2022 at 09:26 AM
+-- Generation Time: Mar 06, 2022 at 04:11 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.19
 
@@ -47,6 +47,14 @@ CREATE TABLE `chat` (
   `id_wali` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`id`, `id_guru`, `id_wali`) VALUES
+(1, '111', 1),
+(5, '111', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +68,14 @@ CREATE TABLE `guru` (
   `no_hp` varchar(15) NOT NULL,
   `nip` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `guru`
+--
+
+INSERT INTO `guru` (`username`, `nama`, `alamat`, `no_hp`, `nip`) VALUES
+('111', 'coba guru', '111', '111', '111'),
+('guru', 'guru', 'guru', 'guru', 'guru');
 
 -- --------------------------------------------------------
 
@@ -117,8 +133,18 @@ CREATE TABLE `pesan` (
   `id_chat` int(11) NOT NULL,
   `pengirim` int(11) NOT NULL,
   `pesan` text NOT NULL,
-  `waktu` int(11) NOT NULL
+  `waktu` int(11) NOT NULL,
+  `terbaca` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesan`
+--
+
+INSERT INTO `pesan` (`id`, `id_chat`, `pengirim`, `pesan`, `waktu`, `terbaca`) VALUES
+(1, 1, 111, 'coba pesan', 1646464576, 1),
+(2, 1, 111, 'coba lagi pesan', 1646464651, 1),
+(3, 1, 111, 'coba 2 pesan', 1646464669, 1);
 
 -- --------------------------------------------------------
 
@@ -146,6 +172,17 @@ CREATE TABLE `skor` (
   `id_siswa` int(11) NOT NULL,
   `mapel` int(11) NOT NULL,
   `nilai` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status_pesan`
+--
+
+CREATE TABLE `status_pesan` (
+  `id` int(11) NOT NULL,
+  `status` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -201,6 +238,16 @@ CREATE TABLE `user` (
   `tanggal_buat` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`, `level`, `tanggal_buat`) VALUES
+('111', '698d51a19d8a121ce581499d7b701668', 1, '2022-02-23'),
+('123', '202cb962ac59075b964b07152d234b70', 2, '2022-02-23'),
+('guru', '77e69c137812518e359196bb2f5e9bb9', 1, '2022-02-28'),
+('wali', 'bf8cd26e6c6732b8df17a31b54800ed8', 2, '2022-02-28');
+
 -- --------------------------------------------------------
 
 --
@@ -214,6 +261,14 @@ CREATE TABLE `wali` (
   `no_hp` varchar(15) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `wali`
+--
+
+INSERT INTO `wali` (`username`, `nama`, `alamat`, `no_hp`, `id`) VALUES
+('123', 'akun coba2', '123', '123', 1),
+('wali', 'wali', 'wali', 'wali', 2);
 
 --
 -- Indexes for dumped tables
@@ -285,6 +340,12 @@ ALTER TABLE `skor`
   ADD KEY `skor_mapel` (`mapel`);
 
 --
+-- Indexes for table `status_pesan`
+--
+ALTER TABLE `status_pesan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tipe`
 --
 ALTER TABLE `tipe`
@@ -324,7 +385,7 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kelas`
@@ -348,7 +409,7 @@ ALTER TABLE `mapel`
 -- AUTO_INCREMENT for table `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `siswa`
@@ -360,6 +421,12 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `skor`
 --
 ALTER TABLE `skor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `status_pesan`
+--
+ALTER TABLE `status_pesan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -378,7 +445,7 @@ ALTER TABLE `tipe_berita`
 -- AUTO_INCREMENT for table `wali`
 --
 ALTER TABLE `wali`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -429,6 +496,12 @@ ALTER TABLE `siswa`
 ALTER TABLE `skor`
   ADD CONSTRAINT `skor_mapel` FOREIGN KEY (`mapel`) REFERENCES `mapel` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `skor_siswa` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `status_pesan`
+--
+ALTER TABLE `status_pesan`
+  ADD CONSTRAINT `status_pesan` FOREIGN KEY (`id`) REFERENCES `pesan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`
