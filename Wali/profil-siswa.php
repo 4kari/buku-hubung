@@ -9,15 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kotak Masuk</title>
+    <title>Profil</title>
 
     <!-- Custom fonts for this template-->
+    <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="../assets/css/style-tulis-pesan.css" rel="stylesheet">
+
     <link href="../assets/navbar-style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/cards-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <style>
@@ -39,7 +39,7 @@
     }
 
     #top a {
-        padding: 1px;
+        padding: 5px;
         background-color: #ffeaa7;
         color: black;
         border-radius: 50%;
@@ -58,13 +58,10 @@
         color: aquamarine;
     }
 
-    .top {
-        margin-top: -60px;
-    }
 </style>
 
 <body>
-    <nav class="top">
+    <nav class="navbar-fixed-top">
         <div class="navigation">
             <ul>
                 <li class="list">
@@ -80,8 +77,8 @@
                     </a>
 
                 </li>
-                <li class="list active">
-                    <a href="kotak-masuk.php">
+                <li class="list">
+                    <a href="pesan.php">
                         <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
                         <span class="text">Chat</span>
                     </a>
@@ -95,7 +92,7 @@
                     </a>
 
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="lainnya.php">
                         <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                         <span class="text">Lainnya</span>
@@ -109,69 +106,66 @@
 
         </div>
     </nav>
-    <div id="top">
-        <a href="javascript:history.back()">
-            <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
-        </a>
-    </div>
 
-    <div class="container">
-        <br>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card chat-app">
-                    <form class="chat" method="post" action="">
-                        <div class="chat-header clearfix">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Kirim kepada:</label>
-                                        <select class="form-control">
-                                            <option>Pilih</option>
-                                            <option>Hartiningsih</option>
-                                            <option>Rika Wahyuni</option>
-                                            <optio>Agus Muhammad</optio>
-                                            <option>Dewi Astutik</option>
-                                        </select>
-                                    </div>
-                                </div>
+    <div class="hero-image">
+        <div class="container">
+            <!-- Nested Row within Card Body -->
+            <br>
+            <div class="row mx-auto">
+                <div class="card mx-auto">
+                    <div class="img">
+                        <img src="../assets/img/avatar-cewek.png">
+                    </div>
+                    <div class="infos">
+                        <div class="name">
+                            <h2>Putri Agustina  | <b>Siswa</b></h2>
 
-                            </div>
                         </div>
-                        <div class="chat-history">
-                            <ul class="m-b-0">
-                                <li class="clearfix">
+                        <p class="text">
 
-                                </li>
-                            </ul>
+                        </p>
+                        <table class="table table-borderless padding-large stats">
+                            <tr>
+                                <th>Nama Lengkap</th>
+                                <th> : </th>
+                                <td>Putri Agustina</td>
+                            </tr>
+                            <tr>
+                                <th>Wali Murid</th>
+                                <th> : </th>
+                                <td>Dewi Puji</td>
+                            </tr>
+                            <tr>
+                                <th>Telepon</th>
+                                <th> : </th>
+                                <td>0812345678778</td>
+                            </tr>
+
+                        </table>
+                        <div class="links">
+                            <button class="follow">Edit Profil</button>
+                            <!-- <button class="view">View profile</button> -->
                         </div>
-                        <div class="chat-message clearfix">
-                            <div class="form-row mb-4">
-                                <div class="col col-12">
-                                    <textarea rows="2" placeholder="Tulis pesan disini..." class="form-control"></textarea>
-                                </div>
-                                <div class="col">
-                                    <button type="submit" class="btn btn-success btn-sm float-right mt-1">
-                                        <i class="fa fa-paper-plane"></i>
-                                        kirim
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
+            <div id="top">
+                <a href="javascript:history.back()">
+                    <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
+                </a>
+            </div>
         </div>
+    </div>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="assets/vendor/jquery/jquery.min.js"></script>
-        <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="assets/js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
 
 </body>
 

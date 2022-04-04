@@ -1,22 +1,21 @@
+<?php
+require 'koneksi.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Skor Harian</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
     <link href="../assets/navbar-style.css" rel="stylesheet" type="text/css">
-
 </head>
 <style>
     body {
@@ -36,35 +35,9 @@
 
     }
 
-    img {
-        width: 53PX;
-        height: 60PX;
-        padding: 2px;
-    }
-
-    #top a {
-        padding: 5px;
-        background-color: #ffeaa7;
-        color: black;
-        border-radius: 50%;
-        position: fixed;
-        float: left;
-        text-align: left;
-        left: 10;
-        bottom: 1rem;
-        margin-left: 0.1rem;
-
-    }
-
-    #top i {
-        float: left;
-        right: 70%;
-        color: aquamarine;
-    }
 </style>
 
-<body class="top">
-
+<body>
     <nav class="navbar-fixed-top">
         <div class="navigation">
             <ul>
@@ -110,63 +83,52 @@
 
         </div>
     </nav>
-
     <div class="container">
         <br>
-        <div class="card border-0 rounded-circle" style="border-radius: 15px;">
-            <a class="card-block stretched-link text-decoration-none" href="skor-harian.isi.php">
-                <div class="card-body bg-gradient-primary  text-white text-center">
-                    <h1 class="card-title"><b>Minggu 1</b></h1>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Menu Penilaian Siswa
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Skor Mingguan Siswa</h5>
+                        <p class="card-text"></p>
+                        <a href="skor-harian.php" class="btn btn-primary">Buka menu</a>
+                    </div>
                 </div>
-            </a>
-        </div>
-        <br>
-        <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
-                <div class="card-body bg-gradient-info   text-white text-center">
-                    <h1 class="card-title"><b>Minggu 2</b></h1>
-                </div>
-            </a>
+            </div>
 
         </div>
-        <br>
-        <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
-                <div class="card-body bg-gradient-success   text-white text-center">
-                    <h1 class="card-title"><b>Minggu 3</b></h1>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Menu Penilaian Karakter
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Skor Karakter Siswa</h5>
+                        <p class="card-text"></p>
+                        <a href="skor-karakter.php" class="btn btn-primary">Buka menu</a>
+                    </div>
                 </div>
-            </a>
+            </div>
         </div>
         <br>
-        <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
-                <div class="card-body bg-gradient-warning   text-white text-center">
-                    <h1 class="card-title"><b>Minggu 4</b></h1>
-                </div>
-            </a>
-        </div>
-        <!-- Button back -->
-        <div id="top">
-            <a href="javascript:history.back()">
-                <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
-            </a>
-        </div>
+
     </div>
+    <!-- <script>
+    const list = document.querySelectorAll('.list');
 
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="assets/js/sb-admin-2.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    function activeLink() {
+      list.forEach((item) =>
+        item.classList.remove('active'));
+      this.classList.add('active');
+    }
+    list.forEach((item) =>
+      item.addEventListener('click', activeLink));
+  </script> -->
 
 </body>
 
