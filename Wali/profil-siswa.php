@@ -16,8 +16,8 @@
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link href="../assets/navbar-style.css" rel="stylesheet" type="text/css">
-    <link href="../assets/cards-style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/cards-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <style>

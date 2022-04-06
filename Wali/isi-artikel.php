@@ -22,7 +22,7 @@ require 'koneksi.php';
 
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style-navbar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style-navbar.css">
 
 </head>
 <style>
