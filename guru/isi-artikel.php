@@ -22,7 +22,7 @@ require 'koneksi.php';
 
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style-navbar.css">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <style>
@@ -70,17 +70,18 @@ require 'koneksi.php';
         transform: translate(-50%, -50%);
     }
 </style>
+    <div class="bg-nav"></div>
+    <nav class="navbar-fixed-top">
+        <div class="navigation">
+            <ul>
+                <li class="">
+                    <a class="nav-link" href="berita.php"><i class="fa fa-arrow-left" style="font-size:24px"></i><span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
 
-<body class="bg-gradient-light">
-    <nav class="navbar navbar-expand-sm bg-light justify-content-right fixed-top">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="artikel.php"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
+        </div>
     </nav>
-
-
+<body class="bg-gradient-light">
     <div class="container" style="margin-top: 140px;">
         <?php
         $no = 1;

@@ -1,21 +1,23 @@
-<?php
-require 'koneksi.php';
-include '../backend/berita.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Profil</title>
+
+    <!-- Custom fonts for this template-->
     <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-<!-- ini style navbar -->
+
     <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+
 </head>
 <style>
     body {
@@ -34,14 +36,33 @@ include '../backend/berita.php';
         background-size: cover;
 
     }
+
+    #top a {
+        padding: 5px;
+        background-color: #ffeaa7;
+        color: black;
+        border-radius: 50%;
+        position: fixed;
+        float: left;
+        text-align: left;
+        left: 10;
+        bottom: 1rem;
+        margin-top: 20px;
+
+    }
+
+    #top i {
+        float: left;
+        right: 70%;
+        color: aquamarine;
+    }
 </style>
 
 <body>
-    <div class="bg-nav"></div>
     <nav class="navbar-fixed-top">
         <div class="navigation">
             <ul>
-                <li class="list active">
+                <li class="list">
                     <a href="beranda.php">
                         <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
                         <span class="text">Home</span>
@@ -55,7 +76,7 @@ include '../backend/berita.php';
 
                 </li>
                 <li class="list">
-                    <a href="kotak-masuk.php">
+                    <a href="pesan.php">
                         <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
                         <span class="text">Chat</span>
                     </a>
@@ -69,7 +90,7 @@ include '../backend/berita.php';
                     </a>
 
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="lainnya.php">
                         <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                         <span class="text">Lainnya</span>
@@ -83,37 +104,59 @@ include '../backend/berita.php';
 
         </div>
     </nav>
+
     <div class="container">
+        <!-- Nested Row within Card Body -->
         <br>
-
-        <div class="alert alert-danger color-black text-center" role="alert">
-            <i class="fa fa-bell" aria-hidden="true"></i>
-            PENGUMUMAN
-            <i class="fa fa-bell" aria-hidden="true"></i>
-
-        </div>
-        <a class="btn btn-success float-right" href=""><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Pengumuman</span></a>
-        <br>
-        <hr>
-        <?php
-        $no = 1;
-        $data = mysqli_query($koneksi, "select * from berita");
-        while ($result = mysqli_fetch_array($data)) {
-
-        ?>
-            <div class="card">
+        <div class="row">
+            <div class="card mx-auto">
+                <br>
+                <img class="card-img-top" style="margin-top: 13px;" src="../assets/img/avatar-cewek.png" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title"><?= $result['judul_berita']; ?></h4>
+                    <h4 class="card-title">Dewi Puji <span>-</span> <b>Guru</b></h4>
                     <br>
-                    <a class="btn btn-info" href="isi-artikel.php?id=<?= $result['id']; ?>">Baca selengkapnya......</a>
-                </div>
-                <div class="card-footer">
-                    <p class="small text-muted"><?= $result['tanggal_post']; ?></p>
+                    <table class="table table-borderless padding-large">
+                        <tr>
+                            <th>Nama</th>
+                            <th> : </th>
+                            <td>Dewi Puji</td>
+
+                        </tr>
+                        <tr>
+                            <th>ID Pengguna</th>
+                            <th> : </th>
+                            <td>01234567889</td>
+                        </tr>
+                        <tr>
+                            <th>Alamat</th>
+                            <th> : </th>
+                            <td>Jakarta Barat, Indonesia</td>
+                        </tr>
+
+                    </table>
+                    <br>
+
                 </div>
             </div>
-            <hr>
-        <?php } ?>
+        </div>
+        <div id="top">
+
+
+            <a href="javascript:history.back()">
+                <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
+            </a>
+        </div>
     </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
 
 </body>
 
