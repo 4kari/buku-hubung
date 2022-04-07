@@ -1,4 +1,4 @@
-<!-- <?php include('backend/get_kontak.php'); ?> -->
+<?php include('../backend/kontak_wali.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,6 +112,8 @@
     <div class="container">
         <br>
         <h4 class="text-center">Kontak</h4>
+        <?php if($data){
+        foreach($data as $d){?>
         <div class="card">
             <div class="row no-gutters">
                 <div class="col-auto">
@@ -119,28 +121,17 @@
                 </div>
                 <div class="col">
                     <div class="card-block px-2">
-                        <h4 class="card-title">Wali Murid 1</h4>
-                        <p class="card-text">083425242424</p>
-                        <a href="#" class="btn btn-primary">CHAT</a>
+                        <h4 class="card-title"><?=$d['nama']?></h4>
+                        <p class="card-text"><?=$d['no_hp']?></p>
+                        <a href="backend/mulai_chat.php/?username=<?= $d['username']; ?>" class="btn btn-primary">CHAT</a>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
-        <div class="card">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <img style="width:120px; height:120px;" class="mx-auto mt-2 mb-2 rounded-pill" src="../assets/img/avatar-cewek.png" alt="Avatar">
-                </div>
-                <div class="col">
-                    <div class="card-block px-2">
-                        <h4 class="card-title">Wali Murid 1</h4>
-                        <p class="card-text">083425242424</p>
-                        <a href="#" class="btn btn-primary">CHAT</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <?php } 
+        } ?>
 
     </div>
     <!-- Bootstrap core JavaScript-->
