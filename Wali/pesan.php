@@ -79,7 +79,7 @@ require 'auth.php';
     <nav class="navbar navbar-expand-sm bg-light justify-content-right fixed-top">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../kontak.php"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../kotak-masuk.php"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </nav>
