@@ -1,3 +1,6 @@
+<?php include('../backend/kontak_wali.php'); 
+require 'auth.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,17 +12,38 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kotak Masuk</title>
+    <title>Kotak</title>
 
-    <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-
-    <link href="../assets/css/style-pesan.css" rel="stylesheet">
+    <!-- <link href="assets/css/style-pesan.css" rel="stylesheet"> -->
     <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
-
 </head>
 <style>
+    body {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+50,9fd8ef+51,2ab0ed+100;Blue+Gloss+%235 */
+        background: #e4f5fc;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0);
+        /* IE6-9 */
+
+        background-size: cover;
+
+    }
+
+    .card {
+        padding: 15px;
+    }
+
     #top a {
         padding: 5px;
         background-color: #ffeaa7;
@@ -39,23 +63,6 @@
         right: 70%;
         color: aquamarine;
     }
-
-    body {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+50,9fd8ef+51,2ab0ed+100;Blue+Gloss+%235 */
-        background: #e4f5fc;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0);
-        /* IE6-9 */
-
-        background-size: cover;
-
-    }
 </style>
 
 <body>
@@ -65,100 +72,70 @@
             <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
         </a>
     </div>
-    <div class="top">
-        <nav class="navbar-fixed-top">
-            <div class="navigation">
-                <ul>
-                    <li class="list">
-                        <a href="beranda.php">
-                            <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
-                            <span class="text">Home</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="berita.php">
-                            <span class="icon"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
-                            <span class="text">Berita</span>
-                        </a>
+    <nav class="navbar-fixed-top">
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <a href="beranda.php">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="berita.php">
+                        <span class="icon"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
+                        <span class="text">Berita</span>
+                    </a>
 
-                    </li>
-                    <li class="list active">
-                        <a href="kotak-masuk.php">
-                            <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                            <span class="text">Chat</span>
-                        </a>
-
-                    </li>
-                    <li class="list">
-                        <a href="nilai.php">
-                            <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                            <span class="text">Nilai</span>
-
-                        </a>
-
-                    </li>
-                    <li class="list">
-                        <a href="lainnya.php">
-                            <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
-                            <span class="text">Lainnya</span>
-                        </a>
-
-                    </li>
-                    <div class="indicator">
-
-                    </div>
-                </ul>
-            </div>
-        </nav>
-    </div>
+                </li>
+                <li class="list">
+                    <a href="kotak-masuk.php">
+                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                        <span class="text">Chat</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="nilai.php">
+                        <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                        <span class="text">Nilai</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="lainnya.php">
+                        <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+                        <span class="text">Lainnya</span>
+                    </a>
+                </li>
+                <div class="indicator">
+                </div>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
-        <div class="row  d-flex justify-content-center">
-            <div class="col col-md-6">
-                <div class="card col-md-12 mt-4">
-                    <div class="col col-md-12 mt-4 text-right">
-                        <h4><a href="tulis-pesan.php">Tulis pesan <i class="far fa-edit"></i></a></h4>
-                    </div>
-                    <div id="plist" class="people-list">
-
-                        <ul class="list-unstyled chat-list mt-2 mb-0">
-
-                            <li class="clearfix active">
-                                <img class="img-thumbnail" src="../assets/img/avatar-cewek.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Hartiningsih</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i><a href="pesan.php">1 Pesan baru</a></div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img class="img-thumbnail" src="../assets/img/avatar-cewek.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Rika Wahyuni</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a href="pesan.php">0 Pesan baru</a></div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img class="img-thumbnail" src="../assets/img/avatar-profil.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Agus Muhammad</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i></i><a href="pesan.php">2 Pesan baru</a></div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img class="img-thumbnail" src="../assets/img/avatar-cewek.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Dewi Astutik</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i></i><a href="pesan.php">0 Pesan baru</a></div>
-                                </div>
-                            </li>
-
-
-                        </ul>
+        <br>
+        <h4 class="text-center">Kontak</h4>
+        <?php if($data){
+        foreach($data as $d){?>
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <img style="width:120px; height:120px;" class="mx-auto mt-2 mb-2 rounded-pill" src="../assets/img/avatar-cewek.png" alt="Avatar">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title"><?=$d['nama']?></h4>
+                        <p class="card-text"><?=$d['no_hp']?></p>
+                        <a href="backend/mulai_chat.php/?username=<?= $d['username']; ?>" class="btn btn-primary">CHAT</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <hr>
 
+    <?php } 
+        } ?>
+
+    </div>
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -1,4 +1,6 @@
-<?php include('backend/lihat_chat.php'); var_dump($data_pesan);?>
+<?php include('backend/lihat_chat.php');
+require 'auth.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 

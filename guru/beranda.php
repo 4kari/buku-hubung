@@ -1,6 +1,7 @@
 <?php
 require 'koneksi.php';
 include '../backend/berita.php';
+require 'auth.php';
 ?>
 
 <!DOCTYPE html>

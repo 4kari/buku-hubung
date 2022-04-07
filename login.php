@@ -64,11 +64,11 @@
 
                                     <hr>
                                     <div class="text-center">
-                                        <div class="text-center">
+                                        <!-- <div class="text-center">
                                             <a class="btn btn-primary" href="guru/beranda.php">LOGIN GURU</a><hr>
                                             <a class="btn btn-info " href="wali/beranda.php">LOGIN WALI</a><hr>
                                             <a class="btn btn-warning " href="alumni/beranda.php">LOGIN ALUMNI</a><hr>
-                                        </div>
+                                        </div> -->
                                         <a class="small" href="daftar.php">Belum punya akun? Daftar!</a>
                                     </div>
                                 </div>
