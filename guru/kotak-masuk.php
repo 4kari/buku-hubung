@@ -12,7 +12,7 @@ require 'auth.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kotak</title>
+    <title>Kotak Masuk</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
