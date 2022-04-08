@@ -126,7 +126,7 @@ require 'auth.php';
                     <div class="card-block px-2">
                         <h4 class="card-title"><?=$d['nama']?></h4>
                         <p class="card-text"><?=$d['no_hp']?></p>
-                        <a href="backend/mulai_chat.php/?username=<?= $d['username']; ?>" class="btn btn-primary">CHAT</a>
+                        <a href="../backend/mulai_chat.php/?username=<?= $d['username']; ?>" class="btn btn-primary">CHAT</a>
                     </div>
                 </div>
             </div>
