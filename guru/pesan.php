@@ -114,7 +114,7 @@ require 'auth.php';
     <div class="m-4 p-2" style="position: fixed; bottom: 0px; right: 0px; display:none;" id="FormPesan">
         <form action="../../backend/kirim_pesan.php" class="form-container" method="POST">
             <h1>Chat</h1>
-            <input type="hidden" name="id_chat" value="<?= $id;?>"></input>
+            <input type="hidden" name="id_chat" value="<?= $_GET['id'];?>"></input>
             <div class="form-group">
                 <label for="msg"><b>Pesan</b></label>
                 <textarea class="w-100 mt-4 mb-4 pt-2" style="height:200px" placeholder="Type message.." name="pesan" required></textarea>

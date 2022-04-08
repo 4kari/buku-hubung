@@ -8,17 +8,11 @@ $id = $_POST['id_chat'];
 $pengirim = $_SESSION['username'];
 $pesan = $_POST['pesan'];
 $waktu = time();
-//menambahkan pesan ke tabel pesan berdasarkan id_chat
-$sql    = "INSERT INTO pesan (id_chat, pengirim, pesan, waktu) VALUES (:id_chat, :pengirim, :pesan, :waktu)";
-$query  = $conn->prepare($sql);
-$query->execute(array(
-    ':id_chat' => $id,
-    ':pengirim' => $pengirim,
-    ':pesan' => $pesan,
-    ':waktu' => $waktu
-));
 
-var_dump($_SESSION['level']);
+//menambahkan pesan ke tabel pesan berdasarkan id_chat
+$sql    = "INSERT INTO pesan (id_chat, pengirim, pesan, waktu) VALUES ('$id', '$pengirim', '$pesan', '$waktu')";
+$conn->exec($sql);
+
 if($_SESSION['level']==1){
     header("location:../guru/pesan.php/?id=".$id);
 }else{
