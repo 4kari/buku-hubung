@@ -1,5 +1,6 @@
-<?php include('../backend/lihat_chat.php');
-require 'auth.php';
+<?php 
+include('../backend/lihat_chat.php');
+//require 'auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

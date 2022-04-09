@@ -1,13 +1,7 @@
-<?php 
-    require "koneksi.php";
-
-    $id = $_GET['id'];
-    $data = mysqli_query($koneksi, "select * from penilaian_siswa where id = $id");
-        while ($result = mysqli_fetch_array($data)) {
-            $tgl = $result['tanggal'];
-        }
-
+<?php
+require "koneksi.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,11 +26,7 @@
 </head>
 <style>
     body {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-    .isi {
-        color: black;
+        font-family: 'Times New Roman', Times, serif;
     }
 </style>
 
@@ -44,29 +34,28 @@
     <nav class="navbar navbar-expand-sm bg-light justify-content-right fixed-top">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="skor-karakter.php"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="skor-karakter.php?"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </nav>
 
-    <div class="container" style="margin-top: 60px;">
+    <div class="container" style="margin-top: 100px;">
 
         <div class="row justify-content-center">
             <div class="col col-md-6">
                 <div class="row">
                     <div class="col-sm-12">
-                        
+                        <h1 style="text-align: right;"><span class="badge badge-secondary text-right" style="background-color: limegreen; ">Januari 2022</span></h1>
                     </div>
 
                 </div>
-                <div class="card px-1 py-4">
-                    <div class="card-block stretched-link text-decoration-none">
-                        <h3 style="color: black; margin-top: 5px; text-align:center;">Hasil Penilaian Karakter</h3>
+
+                <div class="card border-3">
+                    <a class="card-block stretched-link text-decoration-none" href="">
                         <div class="card-body">
                             <?php
                             $id = $_GET['id'];
-                            
-                            $data = mysqli_query($koneksi, "SELECT * FROM siswa WHERE id = '$id'");
+                            $data = mysqli_query($koneksi, "select * from siswa where id = $id");
                             while ($result = mysqli_fetch_array($data)) {
 
                             ?>
@@ -75,32 +64,49 @@
                             <h5><b>No Absen</b><span> : </span><?= $result['absen']; ?> </h5>
                             <?php } ?>
                         </div>
-                        <?php
-                            $id = $_GET['id'];
-                            $tanggal = $_GET['tanggal'];
-                            $data = mysqli_query($koneksi, "SELECT * FROM penilaian_siswa WHERE id_siswa = '$id' AND tanggal = '$tanggal'");
-                            while ($result = mysqli_fetch_array($data)) {
+                    </a>
+                </div>
+                <hr>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title text-center"><u>Penilaian karakter</u></h4>
+                        <br>
+                        <div class="row justify-content-center">
+                            <div class="col col-9">
+                                <?php
+                                $id = $_GET['id'];
+                                ?>
+                                <form action="../backend/nilai.php?aksi=tambah_nilai" method="POST">
+                                    <div class="form-group">
+                                        <input type="hidden" name="id_siswa" value="<?= $id; ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nilai Karakter</label>
+                                        <select class="form-control" name="jenis" id="jenis">
+                                            <option value="SANGAT BAIK">SANGAT BAIK</option>
+                                            <option value="BAIK">BAIK</option>
+                                            <option value="CUKUP">CUKUP</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="saran">Saran</label>
+                                        <textarea class="form-control" name="saran" id="saran" cols="30" rows="10"></textarea>
+                                    </div>
+                                    
+                                    <div class=" d-flex flex-column text-center px-5 mt-3 mb-3">
+                                        <div class="inline text-center px-5 mt-3 mb-3"> 
+                                            
+                                            <button class="btn btn-primary btn-md" name="create"><i class="fa fa-plus"></i> Tambah</button>
+                                        </div>
+                                        
+                                    </div>
+                                </form>
+                                
+                            </div>
 
-                        ?>
-                        <div class="row border-dark">
-                            <div class="col-sm-12">
-                                <h1 style="text-align: center;"><span class="badge badge-warning text-right"><?= $result['jenis']; ?></span></h1>
-                            </div>
+
                         </div>
-                        <div class="card border-dark mb-4">
-                            <div class="card-body">
-                                <div class="isi">
-                                    <h3>Saran:</h3>
-                                    <p>
-                                        <?= $result['saran']; ?>
-                                    </p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <?php } ?>
                     </div>
-
                 </div>
             </div>
         </div>

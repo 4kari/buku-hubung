@@ -1,5 +1,5 @@
-<?php
-require 'auth.php';
+<?php 
+require "koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ require 'auth.php';
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link href="../assets/navbar-style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <style>
@@ -117,11 +117,12 @@ require 'auth.php';
 
     <div class="container">
         <br>
-        <a class="btn btn-success float-right" href=""><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Penilaian Karakter</span></a>
+        <a class="btn btn-success float-right" href="tambah/tambah_karakter.php"><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Penilaian Karakter</span></a>
         <br>
         <hr>
+        
         <div class="card border-0 rounded-circle" style="border-radius: 15px;">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=01">
                 <div class="card-body bg-gradient-primary  text-white text-center">
                     <h1 class="card-title"><b>JANUARI</b></h1>
                 </div>
@@ -129,7 +130,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=02">
                 <div class="card-body bg-gradient-info   text-white text-center">
                     <h1 class="card-title"><b>FEBRUARI</b></h1>
                 </div>
@@ -138,7 +139,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=03">
                 <div class="card-body bg-gradient-success   text-white text-center">
                     <h1 class="card-title"><b>MARET</b></h1>
                 </div>
@@ -146,7 +147,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=04">
                 <div class="card-body bg-gradient-warning   text-white text-center">
                     <h1 class="card-title"><b>APRIL</b></h1>
                 </div>
@@ -154,7 +155,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=05">
                 <div class="card-body bg-gradient-secondary   text-white text-center">
                     <h1 class="card-title"><b>MEI</b></h1>
                 </div>
@@ -162,7 +163,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=06">
                 <div class="card-body bg-gradient-dark   text-white text-center">
                     <h1 class="card-title"><b>JUNI</b></h1>
                 </div>
@@ -170,7 +171,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=07">
                 <div class="card-body bg-gradient-info   text-white text-center">
                     <h1 class="card-title"><b>JULI</b></h1>
                 </div>
@@ -178,7 +179,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=08">
                 <div class="card-body bg-gradient-primary   text-white text-center">
                     <h1 class="card-title"><b>AGUSTUS</b></h1>
                 </div>
@@ -186,7 +187,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=09">
                 <div class="card-body bg-gradient-success   text-white text-center">
                     <h1 class="card-title"><b>SEPTEMBER</b></h1>
                 </div>
@@ -194,7 +195,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=10">
                 <div class="card-body bg-gradient-warning   text-white text-center">
                     <h1 class="card-title"><b>OKTOBER</b></h1>
                 </div>
@@ -202,7 +203,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=11">
                 <div class="card-body bg-danger  text-white text-center">
                     <h1 class="card-title"><b>NOVEMBER</b></h1>
                 </div>
@@ -210,12 +211,13 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=12">
                 <div class="card-body bg-dark   text-white text-center">
                     <h1 class="card-title"><b>DESEMBER</b></h1>
                 </div>
             </a>
         </div>
+   
         <!-- Button back -->
         <div id="top">
             <a href="window.history.back();">

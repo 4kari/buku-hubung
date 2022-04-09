@@ -1,6 +1,3 @@
-<?php
-require 'auth.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +17,7 @@ require 'auth.php';
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="../assets/css/style-tulis-pesan.css" rel="stylesheet">
-    <link href="../assets/navbar-style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <style>
@@ -67,7 +64,7 @@ require 'auth.php';
 </style>
 
 <body>
-    <nav class="top">
+    <nav class="top mt-2">
         <div class="navigation">
             <ul>
                 <li class="list">

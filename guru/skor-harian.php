@@ -1,6 +1,3 @@
-<?php
-require 'auth.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +15,7 @@ require 'auth.php';
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link href="../assets/navbar-style.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <style>
@@ -116,7 +113,7 @@ require 'auth.php';
 
     <div class="container">
         <br>
-        <a class="btn btn-success float-right" href=""><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Penilaian Mingguan</span></a>
+        <a class="btn btn-success float-right" href="tambah/tambah_nilai.php"><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Penilaian Mingguan</span></a>
         <br>
         <hr>
         <div class="card border-0 rounded-circle" style="border-radius: 15px;">

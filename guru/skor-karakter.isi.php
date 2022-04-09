@@ -1,9 +1,9 @@
-<?php
-require 'auth.php';
+<?php 
+require "koneksi.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -15,17 +15,23 @@ require 'auth.php';
     <title>Skor Harian</title>
 
     <!-- Custom fonts for this template-->
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style-navbar.css">
+    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style-navbar.css">
 
 </head>
 <style>
     body {
         font-family: 'Times New Roman', Times, serif;
+    }
+
+    img {
+        width: 53PX;
+        height: 60PX;
+        padding: 2px;
     }
 </style>
 
@@ -37,76 +43,46 @@ require 'auth.php';
             </li>
         </ul>
     </nav>
+    <div class="container" style="margin-top: 70px;">
+        <div class="card border-3">
+            <div class="row">
+                <div class="card-body col col-md-12 text-center justify-content-center">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Siswa</th>
+                            <th>Bulan ke-</th>
+                            <th>Aksi</th>
+                        </tr>
+                        <?php
+                            $no = 1;
+                            $tgl = $_GET['tanggal'];
+                            $data = mysqli_query($koneksi, "select * from penilaian_siswa where tanggal='$tgl'");
+                            while ($result = mysqli_fetch_array($data)) {
 
-    <div class="container" style="margin-top: 100px;">
-
-        <div class="row justify-content-center">
-            <div class="col col-md-6">
-                <div class="row">
-                    <h3 style="color: black; margin-top: 5px;">Hasil Penilaian</h3>
-                    <div class="col-sm-12">
-                        <h1 style="text-align: right;"><span class="badge badge-secondary text-right" style="background-color: limegreen; ">Januari 2022</span></h1>
-                    </div>
-
-                </div>
-
-                <div class="card border-3">
-                    <a class="card-block text-decoration-none">
-
-                        <div class="card-body">
-                            <h2 class="card-title" style="color: black;"><b>Data Siswa</b></h2>
-                            <br>
-                            <table>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th> : </th>
-                                    <th>Putri Agustina</th>
-
-                                </tr>
-                                <tr>
-                                    <th>Kelas</th>
-                                    <th> : </th>
-                                    <th>12 B</th>
-                                </tr>
-                                <tr>
-                                    <th>No. Absen</th>
-                                    <th> : </th>
-                                    <th>06</th>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
-                </div>
-                <hr>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title"><u>Hasil penilaian karakter</u></h4>
-                        <br>
-                        <div class="row justify-content-center">
-                            <div class="col col-9">
-                                <div class="card bg-warning text-center text-white">
-                                    <div class="card-body">Sangat Baik</div>
-                                </div>
-                                <br>
-                                <div class="card bg-success text-center text-white">
-                                    <div class="card-body">Baik</div>
-                                </div>
-                                <br>
-                                <div class="card bg-success text-center text-white">
-                                    <div class="card-body">Cukup | Kurang</div>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <a href="skor-karakter.isi.keterangan.php" class="btn btn-outline-warning mt-5" style="border: 2px solid black;"><i>Klik Disini</i></a>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
+                            ?>
+                        <tr>
+                            
+                            <td><?= $no++; ?></td>
+                            <?php 
+                            $id = $result['id_siswa'];
+                            $datas = mysqli_query($koneksi, "select * from siswa where id='$id'");
+                            while ($results = mysqli_fetch_array($datas)) {
+                            ?>
+                            <td><?= $results['nama']; ?></td>
+                            <?php } ?>
+                            <td><?= $result['tanggal']; ?></td>
+                            <td class="inline">
+                                <a href="skor-karakter.isi.keterangan.php?id=<?= $result['id_siswa']."&tanggal=".$result['tanggal']; ?>" class="btn btn-md btn-info">Lihat</a>
+                                <a href="skor-karakter.isi.siswa.php?id=<?= $result['id_siswa']; ?>" class="btn btn-md btn-warning">Tambah</a>
+                            </td>
+                            
+                        </tr>
+                        <?php } ?>
+                    </table>
                 </div>
             </div>
         </div>
-
     </div>
 
 

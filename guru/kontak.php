@@ -1,7 +1,4 @@
-<?php 
-include('../backend/kontak_wali.php'); 
-//require 'auth.php';
-?>
+<?php include('../backend/kontak_wali.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,22 +10,15 @@ include('../backend/kontak_wali.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kotak Masuk</title>
+    <title>Kotak</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-<<<<<<< HEAD
     <!-- <link href="assets/css/style-pesan.css" rel="stylesheet"> -->
     <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
-=======
-
-    <link href="../assets/css/style-pesan.css" rel="stylesheet">
-    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
-
->>>>>>> cead4a3a6e27a1b59bcb9b597f075fc368124a05
 </head>
 <style>
     body {
@@ -96,7 +86,7 @@ include('../backend/kontak_wali.php');
                     </a>
 
                 </li>
-                <li class="list active">
+                <li class="list">
                     <a href="kotak-masuk.php">
                         <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
                         <span class="text">Chat</span>
@@ -108,7 +98,7 @@ include('../backend/kontak_wali.php');
                         <span class="text">Nilai</span>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="lainnya.php">
                         <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                         <span class="text">Lainnya</span>
@@ -133,7 +123,7 @@ include('../backend/kontak_wali.php');
                     <div class="card-block px-2">
                         <h4 class="card-title"><?=$d['nama']?></h4>
                         <p class="card-text"><?=$d['no_hp']?></p>
-                        <a href="../backend/mulai_chat.php/?username=<?= $d['username']; ?>" class="btn btn-primary">CHAT</a>
+                        <a href="backend/mulai_chat.php/?username=<?= $d['username']; ?>" class="btn btn-primary">CHAT</a>
                     </div>
                 </div>
             </div>

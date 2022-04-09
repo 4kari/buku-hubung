@@ -1,7 +1,6 @@
 <?php
 require 'koneksi.php';
 //session_start();
-require 'auth.php';
 ?>
 
 <!DOCTYPE html>

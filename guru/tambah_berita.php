@@ -1,6 +1,7 @@
 <?php
 require 'koneksi.php';
 session_start();
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +35,6 @@ session_start();
         background-size: cover;
 
     }
-
-    
 </style>
 
 <body>
@@ -48,7 +47,7 @@ session_start();
                         <span class="text">Home</span>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="berita.php">
                         <span class="icon"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
                         <span class="text">Berita</span>
@@ -66,11 +65,10 @@ session_start();
                     <a href="nilai.php">
                         <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
                         <span class="text">Nilai</span>
-
                     </a>
 
                 </li>
-                <li class="list active">
+                <li class="list">
                     <a href="lainnya.php">
                         <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                         <span class="text">Lainnya</span>
@@ -85,38 +83,53 @@ session_start();
         </div>
     </nav>
     <div class="container">
-        <br>
-        <div class="row">
-            <div class="col">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active disabled">
-                        Pilihan Menu
-                    </a>
-                    <a href="profil-guru.php" class="list-group-item list-group-item-action">Profil Saya</a>
-                    <a href="data-siswa.php" class="list-group-item list-group-item-action">Data Siswa</a>
-                    <a href="kotak-masuk.php" class="list-group-item list-group-item-action">Kotak Masuk</a>
-                    <a href="kontak.php" class="list-group-item list-group-item-action">Kontak</a>
-                    <a href="#" class="list-group-item list-group-item-action">Info</a>
-                    <hr>
-                    <a href="../backend/logout.php" class="list-group-item list-group-item-action text-center bg-danger text-white">Keluar</a>
-                </div>
-            </div>
-
-        </div>
-        <br>
+    <div class="row">
+			<div class="col-sm-3"></div>
+				<div class="col-lg-12">
+					<br/>
+					<div class="card">
+						<div class="card-header">
+						<h4 class="card-title">Tulis Berita oleh: <?= $username; ?></h4>
+                        <h6></h6>
+						</div>
+						<div class="card-body">
+						<!-- form berfungsi mengirimkan data input 
+						dengan method post ke proses crud dengan paramater get aksi tambah -->
+                            <form action="../backend/berita.php?aksi=tambah" method="POST">
+								
+								<div class="form-group">
+									<label>Judul</label>
+									<input type="text" value="" class="form-control" name="judul" required>
+								</div>
+                                <div class="form-group">
+									<label>Isi Berita</label>
+									<textarea name="deskripsi" cols="10" rows="15" class="form-control" required></textarea>
+								</div>
+                                
+								<div class="form-group">
+                                    <label for="">Pilih Tipe Berita</label>
+									<select class="form-control" name="tipe_berita" id="tipe_berita">
+                                        <?php 
+                                        $data = mysqli_query($koneksi, "select * from tipe_berita");
+                                        while ($result = mysqli_fetch_array($data)) {
+                                        ?>
+                                        <option class="form-control" value="<?= $result['id'];  ?>"><?= $result['keterangan']; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                    
+								</div>
+                                
+								
+								<button class="btn btn-primary btn-md" name="create"><i class="fa fa-plus"> </i> Publish</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+        
 
     </div>
-    <!-- <script>
-    const list = document.querySelectorAll('.list');
-
-    function activeLink() {
-      list.forEach((item) =>
-        item.classList.remove('active'));
-      this.classList.add('active');
-    }
-    list.forEach((item) =>
-      item.addEventListener('click', activeLink));
-  </script> -->
 
 </body>
 
