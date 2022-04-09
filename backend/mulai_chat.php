@@ -31,7 +31,7 @@ if($_SESSION['level']==1){
         ));
     }
     $id = $conn->query("SELECT * FROM chat WHERE id_guru = '$user2' and id_wali = '$id_wali'" , PDO::FETCH_ASSOC)->fetch()['id'];
-    header("location: ../../Wali/pesan.php/?id=".$id);
+    header("location: ../../wali/pesan.php/?id=".$id);
 
 }
 //=======================//

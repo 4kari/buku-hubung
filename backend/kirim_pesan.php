@@ -16,6 +16,6 @@ $conn->exec($sql);
 if($_SESSION['level']==1){
     header("location:../guru/pesan.php/?id=".$id);
 }else{
-    header("location:../Wali/pesan.php/?id=".$id);
+    header("location:../wali/pesan.php/?id=".$id);
 }
 ?>
