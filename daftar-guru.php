@@ -54,7 +54,7 @@
                                 </h1>
                             </div>
                             <form class="user" action="backend/register.php" method="post">
-                                <input type="hidden" name="level" value="2">
+                                <input type="hidden" name="level" value="1">
 
                                 <div class="form-group">
                                     <input type="text" name="nip" class="form-control form-control-user" id="exampleInput" placeholder="N I P">

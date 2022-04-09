@@ -64,12 +64,9 @@
 
                                     <hr>
                                     <div class="text-center">
-                                        <!-- <div class="text-center">
-                                            <a class="btn btn-primary" href="guru/beranda.php">LOGIN GURU</a><hr>
-                                            <a class="btn btn-info " href="wali/beranda.php">LOGIN WALI</a><hr>
-                                            <a class="btn btn-warning " href="alumni/beranda.php">LOGIN ALUMNI</a><hr>
-                                        </div> -->
-                                        <a class="small" href="daftar.php">Belum punya akun? Daftar!</a>
+                                        <h4>Jika belum punya akun silahkan daftar sebagai <a class="small" href="daftar-wali.php"><b><i>Wali</i></b></a> atau <a class="small" href="daftar-guru.php"><b><i>Guru</i></b></a></h4>
+                                        
+                                        <br>
                                     </div>
                                 </div>
                             </div>
