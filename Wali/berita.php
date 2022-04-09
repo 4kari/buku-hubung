@@ -1,6 +1,5 @@
 <?php
 require 'koneksi.php';
-session_start();
 require 'auth.php';
 ?>
 
@@ -87,7 +86,7 @@ require 'auth.php';
         <br>
         <?php
         $no = 1;
-        $data = mysqli_query($koneksi, "select * from berita");
+        $data = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY id DESC");
         while ($result = mysqli_fetch_array($data)) {
 
         ?>

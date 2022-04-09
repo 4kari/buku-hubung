@@ -1,5 +1,12 @@
-<?php
+<?php 
+require 'koneksi.php';
 require 'auth.php';
+$username = $_SESSION['username'];
+$data = mysqli_query($koneksi, "SELECT * FROM wali WHERE username='$username'");
+while ($result = mysqli_fetch_array($data)) {
+    $id = $result['id'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,44 +52,33 @@ require 'auth.php';
     </nav>
     <div class="container" style="margin-top: 70px;">
         <div class="card border-3">
-            <a class="card-block stretched-link text-decoration-none" href="">
-                <div class="card-body">
-                    <h4 class="card-title">Putri Agustina <span>-</span> <b>Siswa</b></h4>
-                    <br>
-                    <table>
+            <div class="row">
+                <div class="card-body col col-md-12 text-center justify-content-center">
+                    <table class="table table-bordered">
                         <tr>
-                            <th>Nama</th>
-                            <th> : </th>
-                            <th>Putri Agustina</th>
+                            <th>No.</th>
+                            <th>Nama Siswa</th>
+                            <th>Aksi</th>
+                        </tr>
+                        <?php
+                            $no = 1;
+                            $data = mysqli_query($koneksi, "SELECT * FROM siswa WHERE wali_id = '$id'");
+                            while ($result = mysqli_fetch_array($data)) {
 
-                        </tr>
+                            ?>
                         <tr>
-                            <th>Kelas</th>
-                            <th> : </th>
-                            <th>12 B</th>
+                            
+                            <td><?= $no++; ?></td>
+                            <td><?= $result['nama']; ?></td>
+                            <td class="inline">
+                                <a href="skor-harian.isi.siswa.php?id=<?= $result['id']; ?>" class="btn btn-md btn-info">Lihat</a>
+                                <a href="#edit" class="btn btn-md btn-warning">Edit</a>
+                            </td>
+                            
                         </tr>
+                        <?php } ?>
                     </table>
                 </div>
-            </a>
-        </div>
-
-        <br>
-        <div class="card border-0">
-            <div class="card-body">
-                <h2 class="text-black">Perolehan Nilai</h2>
-
-                <!-- Bar Chart -->
-                <div class="card" style="margin-bottom: 10%;">
-                    <div class="card-header">
-                        <h4 class="card-title text-center" style="margin-top: 1%;"><b>Tema 1 Subtema 1</b></h4>
-                    </div>
-                    <div class="card-body" style="margin-bottom: 30px;">
-                        <div class="chart-bar">
-                            <canvas id="myBarChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

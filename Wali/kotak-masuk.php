@@ -1,5 +1,5 @@
 <?php include('../backend/kontak_guru.php'); 
-require 'auth.php';
+//require 'auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +19,15 @@ require 'auth.php';
 
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+<<<<<<< HEAD
     <!-- <link href="assets/css/style-pesan.css" rel="stylesheet"> -->
     <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+=======
+
+    <link href="../assets/css/style-pesan.css" rel="stylesheet">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+
+>>>>>>> cead4a3a6e27a1b59bcb9b597f075fc368124a05
 </head>
 <style>
     body {
@@ -88,7 +95,7 @@ require 'auth.php';
                     </a>
 
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="kotak-masuk.php">
                         <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
                         <span class="text">Chat</span>
@@ -100,7 +107,7 @@ require 'auth.php';
                         <span class="text">Nilai</span>
                     </a>
                 </li>
-                <li class="list active">
+                <li class="list">
                     <a href="lainnya.php">
                         <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                         <span class="text">Lainnya</span>

@@ -1,5 +1,11 @@
-<?php
-require 'auth.php';
+<?php 
+require "koneksi.php";
+require "auth.php";
+$username = $_SESSION['username'];
+$data = mysqli_query($koneksi, "SELECT * FROM wali WHERE username='$username'");
+while ($result = mysqli_fetch_array($data)) {
+    $id = $result['id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,8 +123,9 @@ require 'auth.php';
 
     <div class="container">
         <br>
+        
         <div class="card border-0 rounded-circle" style="border-radius: 15px;">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=01">
                 <div class="card-body bg-gradient-primary  text-white text-center">
                     <h1 class="card-title"><b>JANUARI</b></h1>
                 </div>
@@ -126,7 +133,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=02">
                 <div class="card-body bg-gradient-info   text-white text-center">
                     <h1 class="card-title"><b>FEBRUARI</b></h1>
                 </div>
@@ -135,7 +142,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=03">
                 <div class="card-body bg-gradient-success   text-white text-center">
                     <h1 class="card-title"><b>MARET</b></h1>
                 </div>
@@ -143,7 +150,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=04">
                 <div class="card-body bg-gradient-warning   text-white text-center">
                     <h1 class="card-title"><b>APRIL</b></h1>
                 </div>
@@ -151,7 +158,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=05">
                 <div class="card-body bg-gradient-secondary   text-white text-center">
                     <h1 class="card-title"><b>MEI</b></h1>
                 </div>
@@ -159,7 +166,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=06">
                 <div class="card-body bg-gradient-dark   text-white text-center">
                     <h1 class="card-title"><b>JUNI</b></h1>
                 </div>
@@ -167,7 +174,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=07">
                 <div class="card-body bg-gradient-info   text-white text-center">
                     <h1 class="card-title"><b>JULI</b></h1>
                 </div>
@@ -175,7 +182,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=08">
                 <div class="card-body bg-gradient-primary   text-white text-center">
                     <h1 class="card-title"><b>AGUSTUS</b></h1>
                 </div>
@@ -183,7 +190,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=09">
                 <div class="card-body bg-gradient-success   text-white text-center">
                     <h1 class="card-title"><b>SEPTEMBER</b></h1>
                 </div>
@@ -191,7 +198,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=10">
                 <div class="card-body bg-gradient-warning   text-white text-center">
                     <h1 class="card-title"><b>OKTOBER</b></h1>
                 </div>
@@ -199,7 +206,7 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=11">
                 <div class="card-body bg-danger  text-white text-center">
                     <h1 class="card-title"><b>NOVEMBER</b></h1>
                 </div>
@@ -207,36 +214,32 @@ require 'auth.php';
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=12">
                 <div class="card-body bg-dark   text-white text-center">
                     <h1 class="card-title"><b>DESEMBER</b></h1>
                 </div>
             </a>
         </div>
+   
         <!-- Button back -->
         <div id="top">
-            <a href="javascript:history.back()">
+            <a href="window.history.back();">
                 <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
             </a>
         </div>
-
-
     </div>
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="../assets/js/sb-admin-2.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
