@@ -58,19 +58,6 @@
                                             <input type="password" name="password" class="form-control form-control-user" id="exampleInput" placeholder="Password">
                                         </div>
 
-<<<<<<< HEAD
-                                        <input type="submit" value="Masuk" class="btn btn-success btn-user btn-block">
-                                        <hr>
-                                    </form>
-
-                                    <hr>
-                                    <div class="text-center">
-                                        <h4>Jika belum punya akun silahkan daftar sebagai <a class="small" href="daftar-wali.php"><b><i>Wali</i></b></a> atau <a class="small" href="daftar-guru.php"><b><i>Guru</i></b></a></h4>
-                                        
-                                        <br>
-                                    </div>
-                                </div>
-=======
         <div class="card o-hidden border-2 shadow-lg my-4 col-lg-9 mx-auto">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
@@ -94,7 +81,6 @@
                             <hr>
                             <div class="text-center">
                                 <a class="small" href="daftar.php">Belum punya akun? Daftar!</a>
->>>>>>> 001b053b4ca91727a41669c8aa70ef7d4323d4cc
                             </div>
                         </div>
                     </div>

@@ -83,11 +83,7 @@ session_start();
     </nav>
     <div class="container">
         <br>
-<<<<<<< HEAD
         <a class="btn btn-success float-right" href="tambah/tambah_berita.php"><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Berita dan Pengumuman</span></a>
-=======
-        <a class="btn btn-success float-right" href=""><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Berita</span></a>
->>>>>>> cead4a3a6e27a1b59bcb9b597f075fc368124a05
         <br>
         <hr>
         <?php
