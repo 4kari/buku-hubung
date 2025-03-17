@@ -55,7 +55,11 @@
                                 </h1>
                             </div>
                             <form class="user" action="backend/register.php" method="post">
+<<<<<<< HEAD
 
+=======
+                                
+>>>>>>> 001b053b4ca91727a41669c8aa70ef7d4323d4cc
                                 <div class="form-group">
                                     <input type="text" name="nama" class="form-control form-control-user" id="exampleInput" placeholder="Nama pengguna">
                                 </div>
@@ -68,10 +72,18 @@
                                 <div class="form-group">
                                     <input type="text" name="no_hp" class="form-control form-control-user" id="exampleInput" placeholder="No. Telepon">
                                 </div>
+<<<<<<< HEAD
 
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+=======
+                                
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" name="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="Password">
+>>>>>>> 001b053b4ca91727a41669c8aa70ef7d4323d4cc
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Konfirmasi Password">

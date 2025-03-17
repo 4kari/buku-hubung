@@ -1,6 +1,3 @@
-<?php
-require 'auth.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,111 +12,23 @@ require 'auth.php';
     <title>Kotak Masuk</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template-->
-    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="../assets/css/style-tulis-pesan.css" rel="stylesheet">
-    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/css/style-tulis-pesan.css" rel="stylesheet">
 
 </head>
-<style>
-    body {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+50,9fd8ef+51,2ab0ed+100;Blue+Gloss+%235 */
-        background: #e4f5fc;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0);
-        /* IE6-9 */
 
-        background-size: cover;
-
-    }
-
-    #top a {
-        padding: 1px;
-        background-color: #ffeaa7;
-        color: black;
-        border-radius: 50%;
-        position: fixed;
-        float: left;
-        text-align: left;
-        left: 10;
-        bottom: 1rem;
-        margin-top: 20px;
-
-    }
-
-    #top i {
-        float: left;
-        right: 70%;
-        color: aquamarine;
-    }
-
-    .top {
-        margin-top: -60px;
-    }
-</style>
-
-<body>
-    <nav class="top">
-        <div class="navigation">
-            <ul>
-                <li class="list">
-                    <a href="beranda.php">
-                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
-                        <span class="text">Home</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="berita.php">
-                        <span class="icon"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
-                        <span class="text">Berita</span>
-                    </a>
-
-                </li>
-                <li class="list active">
-                    <a href="kotak-masuk.php">
-                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                        <span class="text">Chat</span>
-                    </a>
-
-                </li>
-                <li class="list">
-                    <a href="nilai.php">
-                        <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                        <span class="text">Nilai</span>
-
-                    </a>
-
-                </li>
-                <li class="list">
-                    <a href="lainnya.php">
-                        <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
-                        <span class="text">Lainnya</span>
-                    </a>
-
-                </li>
-                <div class="indicator">
-
-                </div>
-            </ul>
-
-        </div>
+<body class="bg-gradient-light">
+    <nav class="navbar navbar-expand-sm bg-light justify-content-right fixed-top">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="kotak-masuk.php"><i class="fa fa-arrow-left" style="font-size:24px"> Back</i><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
     </nav>
-    <div id="top">
-        <a href="javascript:history.back()">
-            <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
-        </a>
-    </div>
-
     <div class="container">
-        <br>
         <div class="row">
             <div class="col-lg-12">
                 <div class="card chat-app">

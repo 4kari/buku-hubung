@@ -9,36 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Daftar Wali Murid</title>
+    <title>Register</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-<style>
-    body {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+50,9fd8ef+51,2ab0ed+100;Blue+Gloss+%235 */
-        background: #e4f5fc;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0);
-        /* IE6-9 */
 
-        background-size: cover;
-
-    }
-</style>
-
-<body class="top">
+<body class="bg-gradient-success">
 
     <div class="container">
 
@@ -49,7 +33,12 @@
                     <div class="col-lg">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h5 text-gray-900">Daftar sebagai Orang Tua Murid
+                                <img class="img-fluid" style="width: 100px;" src="assets/icon/logo-home.svg">
+                                <h1 class="h5 text-gray-900">Pantau aktivitas anak didik baik di <br> 
+                                    sekolah maupun di rumah dengan <br>
+                                    cepat dan praktis langsung di ponsel anda <br>
+                                    Daftar sekarang!
+
                                 </h1>
                             </div>
                             <form class="user" action="backend/register.php" method="post">
@@ -66,13 +55,15 @@
                                 <div class="form-group">
                                     <input type="text" name="no_hp" class="form-control form-control-user" id="exampleInput" placeholder="No. Telepon">
                                 </div>
-
+                                
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                        <input type="password" name="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Konfirmasi Password">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleRepeatPassword" placeholder="Konfirmasi Password">
                                     </div>
                                 </div>
                                 <input type="submit" value="Next" class="btn btn-success btn-user btn-block">
@@ -80,7 +71,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="login.php">Sudah punya akun? Masuk!</a>
+                                <a class="small" href="login-wali.php">Sudah punya akun? Masuk!</a>
                             </div>
                         </div>
                     </div>

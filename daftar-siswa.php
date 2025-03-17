@@ -1,12 +1,6 @@
-<?php
-require 'backend/auth.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-<?php //var_dump($_GET);
-?>
-
+<?php var_dump($_GET);?>
 <head>
 
     <meta charset="utf-8">
@@ -38,30 +32,28 @@ require 'backend/auth.php';
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h5 mb-4">Silahkan Masukkan Data Diri Anak Anda!</h1>
-                                <form class="user" action="backend/register-siswa.php" method="post">
-                                    <input type="hidden" name="id" class="form-control form-control-user" id="exampleInput">
-                                    <div class="form-group">
-                                        <input type="text" name="nama" class="form-control form-control-user" id="exampleInput" placeholder="Nama Siswa">
-                                    </div>
-                                    <div class="form-group">
-                                        <!-- dropdown -->
-                                        <select>
-                                            <option>01</option>
-                                        </select>
-                                        <input type="text" name="kelas" class="form-control form-control-user" id="exampleInput" placeholder="Kelas">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="absen" class="form-control form-control-user" id="exampleInput" placeholder="No. Absen">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="no_hp" class="form-control form-control-user" id="exampleInput" placeholder="No. Telepon">
-
-                                    </div>
-
-                                    <input type="submit" value="Masuk" class="btn btn-success btn-user btn-block">
-                                    <hr>
-                                </form>
                             </div>
+                            <form class="user" action="../backend/register-siswa.php" method="post">
+                                    <input type="hidden" name="id" value="<?=$_GET['id'];?>">
+                                <div class="form-group">
+                                    <input type="text" name="nama" class="form-control form-control-user" id="exampleInput" placeholder="Nama Siswa">
+                                </div>
+                                <div class="form-group">
+                                    <!-- dropdown -->
+                                    <input type="text" name="kelas" class="form-control form-control-user" id="exampleInput" placeholder="Kelas">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="absen" class="form-control form-control-user" id="exampleInput" placeholder="No. Absen">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="no_hp" class="form-control form-control-user" id="exampleInput" placeholder="No. Telepon">
+
+                                </div>
+
+                                <input type="submit" value="Masuk" class="btn btn-success btn-user btn-block">
+                                <hr>
+                            </form>
+                            <hr>
                         </div>
                     </div>
                 </div>

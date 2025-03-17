@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 require 'koneksi.php';
 //session_start();
@@ -123,6 +124,8 @@ require 'auth.php';
 </body>
 
 =======
+=======
+>>>>>>> 001b053b4ca91727a41669c8aa70ef7d4323d4cc
 <?php
 require 'koneksi.php';
 //session_start();
@@ -147,7 +150,11 @@ require 'koneksi.php';
 
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="../assets/css/style-navbar.css">
+=======
+    <link rel="stylesheet" type="text/css" href="assets/css/style-navbar.css">
+>>>>>>> 001b053b4ca91727a41669c8aa70ef7d4323d4cc
 
 </head>
 <style>
@@ -244,5 +251,8 @@ require 'koneksi.php';
 
 </body>
 
+<<<<<<< HEAD
 >>>>>>> cead4a3a6e27a1b59bcb9b597f075fc368124a05
+=======
+>>>>>>> 001b053b4ca91727a41669c8aa70ef7d4323d4cc
 </html>

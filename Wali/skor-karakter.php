@@ -1,12 +1,3 @@
-<?php 
-require "koneksi.php";
-require "auth.php";
-$username = $_SESSION['username'];
-$data = mysqli_query($koneksi, "SELECT * FROM wali WHERE username='$username'");
-while ($result = mysqli_fetch_array($data)) {
-    $id = $result['id'];
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,29 +12,17 @@ while ($result = mysqli_fetch_array($data)) {
     <title>Skor Karakter</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style-navbar.css">
 
 </head>
 <style>
     body {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+50,9fd8ef+51,2ab0ed+100;Blue+Gloss+%235 */
-        background: #e4f5fc;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0);
-        /* IE6-9 */
-
-        background-size: cover;
-
+        font-family: 'Times New Roman', Times, serif;
     }
 
     img {
@@ -51,81 +30,50 @@ while ($result = mysqli_fetch_array($data)) {
         height: 60PX;
         padding: 2px;
     }
-
-    #top a {
-        padding: 5px;
-        background-color: #ffeaa7;
-        color: black;
-        border-radius: 50%;
-        position: fixed;
-        float: left;
-        text-align: left;
-        left: 10;
-        bottom: 1rem;
-        margin-left: 0.1rem;
-
-    }
-
-    #top i {
-        float: left;
-        right: 70%;
-        color: aquamarine;
-    }
 </style>
 
-<body class="top">
-    <nav class="navbar-fixed-top">
-        <div class="navigation">
-            <ul>
-                <li class="list">
-                    <a href="beranda.php">
-                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
-                        <span class="text">Home</span>
-                    </a>
+<body class="bg-gradient-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">PENILAIAN KARAKTER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="beranda.php">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="list">
-                    <a href="berita.php">
-                        <span class="icon"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
-                        <span class="text">Berita</span>
-                    </a>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="artikel.php">Berita</a>
                 </li>
-                <li class="list">
-                    <a href="kotak-masuk.php">
-                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                        <span class="text">Chat</span>
-                    </a>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="kotak-masuk.php">Kotak Masuk</a>
                 </li>
-                <li class="list active">
-                    <a href="nilai.php">
-                        <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                        <span class="text">Nilai</span>
-
-                    </a>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="artikel.php">Tulis pesan</a>
                 </li>
-                <li class="list">
-                    <a href="lainnya.php">
-                        <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
-                        <span class="text">Lainnya</span>
-                    </a>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="skor-harian.php">Skor Harian</a>
                 </li>
-                <div class="indicator">
-
-                </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="skor-karakter.php">Skor Karakter</a>
+                </li>
             </ul>
-
         </div>
+        <ul class="nav nav-tabs" style="font-size:20px; margin-left: auto; margin-right: auto; ">
+            <li><a href="beranda.php"><span class="img"><img src="assets/icon/house.png"></span></a></li>
+            <li><a href="artikel.php"><span class="img"><img src="assets/icon/news.png"></span></a></li>
+            <li><a href="#menu2"><span class="img"><img src="assets/icon/edition.png"></span></a></li>
+            <li><a href="#menu2"><span class="img"><img src="assets/icon/messenger.png"></span></a></li>
+            <li><a href="skor-harian.php"><span class="img"><img src="assets/icon/scoreboard.png"></span></a></li>
+            <li><a href="skor-karakter.php"><span class="img"><img src="assets/icon/brain.png"></span></a></li>
+        </ul>
     </nav>
 
 
-    <div class="container">
-        <br>
-        
+    <div class="container" style="margin-top: 140px;">
         <div class="card border-0 rounded-circle" style="border-radius: 15px;">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=01">
+            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php">
                 <div class="card-body bg-gradient-primary  text-white text-center">
                     <h1 class="card-title"><b>JANUARI</b></h1>
                 </div>
@@ -133,7 +81,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=02">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-info   text-white text-center">
                     <h1 class="card-title"><b>FEBRUARI</b></h1>
                 </div>
@@ -142,7 +90,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=03">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-success   text-white text-center">
                     <h1 class="card-title"><b>MARET</b></h1>
                 </div>
@@ -150,7 +98,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=04">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-warning   text-white text-center">
                     <h1 class="card-title"><b>APRIL</b></h1>
                 </div>
@@ -158,7 +106,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=05">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-secondary   text-white text-center">
                     <h1 class="card-title"><b>MEI</b></h1>
                 </div>
@@ -166,7 +114,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=06">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-dark   text-white text-center">
                     <h1 class="card-title"><b>JUNI</b></h1>
                 </div>
@@ -174,7 +122,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=07">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-info   text-white text-center">
                     <h1 class="card-title"><b>JULI</b></h1>
                 </div>
@@ -182,7 +130,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=08">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-primary   text-white text-center">
                     <h1 class="card-title"><b>AGUSTUS</b></h1>
                 </div>
@@ -190,7 +138,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=09">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-success   text-white text-center">
                     <h1 class="card-title"><b>SEPTEMBER</b></h1>
                 </div>
@@ -198,7 +146,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=10">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-gradient-warning   text-white text-center">
                     <h1 class="card-title"><b>OKTOBER</b></h1>
                 </div>
@@ -206,7 +154,7 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=11">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-danger  text-white text-center">
                     <h1 class="card-title"><b>NOVEMBER</b></h1>
                 </div>
@@ -214,32 +162,30 @@ while ($result = mysqli_fetch_array($data)) {
         </div>
         <br>
         <div class="card text-white">
-            <a class="card-block stretched-link text-decoration-none" href="skor-karakter.isi.php?tanggal=12">
+            <a class="card-block stretched-link text-decoration-none" href="">
                 <div class="card-body bg-dark   text-white text-center">
                     <h1 class="card-title"><b>DESEMBER</b></h1>
                 </div>
             </a>
         </div>
-   
-        <!-- Button back -->
-        <div id="top">
-            <a href="window.history.back();">
-                <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
-            </a>
-        </div>
+
+
     </div>
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assetsvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../assets/js/sb-admin-2.min.js"></script>
+    <script src="assets/js/sb-admin-2.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

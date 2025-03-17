@@ -1,6 +1,5 @@
 <?php
 require "koneksi.php";
-require 'auth.php';
 
 ?>
 

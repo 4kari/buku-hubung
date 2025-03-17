@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 <<<<<<< HEAD
 include "koneksi.php";
@@ -28,4 +29,9 @@ $query    = $conn->query("SELECT * FROM berita", PDO::FETCH_ASSOC);
 $data     = $query->fetch();
 $num_rows = $query->rowCount();
 >>>>>>> cead4a3a6e27a1b59bcb9b597f075fc368124a05
+=======
+<?php 
+include "connect.php";
+
+>>>>>>> 001b053b4ca91727a41669c8aa70ef7d4323d4cc
 ?>

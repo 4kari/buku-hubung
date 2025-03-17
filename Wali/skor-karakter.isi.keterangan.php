@@ -1,13 +1,3 @@
-<?php 
-    require "koneksi.php";
-
-    $id = $_GET['id'];
-    $data = mysqli_query($koneksi, "select * from penilaian_siswa where id = $id");
-        while ($result = mysqli_fetch_array($data)) {
-            $tgl = $result['tanggal'];
-        }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,17 +12,17 @@
     <title>Skor Harian</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/style-navbar.css">
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style-navbar.css">
 
 </head>
 <style>
     body {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     .isi {
@@ -55,52 +45,49 @@
             <div class="col col-md-6">
                 <div class="row">
                     <div class="col-sm-12">
-                        
+                        <h3 style="text-align: right;"><span class="badge badge-secondary text-right" style="background-color: limegreen; ">Januari 2022</span></h3>
                     </div>
 
                 </div>
-                <div class="card px-1 py-4">
-                    <div class="card-block stretched-link text-decoration-none">
-                        <h3 style="color: black; margin-top: 5px; text-align:center;">Hasil Penilaian Karakter</h3>
-                        <div class="card-body">
-                            <?php
-                            $id = $_GET['id'];
-                            
-                            $data = mysqli_query($koneksi, "SELECT * FROM siswa WHERE id = '$id'");
-                            while ($result = mysqli_fetch_array($data)) {
-
-                            ?>
-                            <h4 class="card-title"><b>Nama Siswa</b><span> : </span><?= $result['nama']; ?></h4>
-                            <h5><b>Kelas</b><span> : </span><?= $result['kelas']; ?> </h5>
-                            <h5><b>No Absen</b><span> : </span><?= $result['absen']; ?> </h5>
-                            <?php } ?>
-                        </div>
-                        <?php
-                            $id = $_GET['id'];
-                            $tanggal = $_GET['tanggal'];
-                            $data = mysqli_query($koneksi, "SELECT * FROM penilaian_siswa WHERE id_siswa = '$id' AND tanggal = '$tanggal'");
-                            while ($result = mysqli_fetch_array($data)) {
-
-                        ?>
-                        <div class="row border-dark">
-                            <div class="col-sm-12">
-                                <h1 style="text-align: center;"><span class="badge badge-warning text-right"><?= $result['jenis']; ?></span></h1>
-                            </div>
-                        </div>
-                        <div class="card border-dark mb-4">
-                            <div class="card-body">
-                                <div class="isi">
-                                    <h3>Saran:</h3>
-                                    <p>
-                                        <?= $result['saran']; ?>
-                                    </p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <?php } ?>
+                <h3 style="color: black; margin-top: 5px;">Hasil Penilaian Karakter</h3>
+                <div class="row border-dark">
+                    <div class="col-sm-12">
+                        <h1 style="text-align: center;"><span class="badge badge-warning text-right">Sangat Baik</span></h1>
                     </div>
+                </div>
 
+                <div class="card border-dark mb-4">
+                    <div class="card-body">
+                        <div class="isi">
+                            <h3>Definisi:</h3>
+                            <p>
+                                Ananda Amran mendapatkan skor ......
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-dark mb-4">
+                    <div class="card-body">
+                        <div class="isi">
+                            <h3>Saran:</h3>
+                            <p>
+                                Ananda Amran mendapatkan skor ......
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-dark mb-4">
+                    <div class="card-body">
+                        <form action="">
+                            <textarea class="form-control"></textarea>
+                        </form>
+                        <div class="col col-12 text-center">
+                            <button class="btn btn-primary mt-2 text-center" type="button">Kirim Tanggapan</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

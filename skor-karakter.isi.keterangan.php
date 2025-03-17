@@ -24,6 +24,10 @@
     body {
         font-family: 'Times New Roman', Times, serif;
     }
+
+    .isi {
+        color: black;
+    }
 </style>
 
 <body class="bg-gradient-light">
@@ -35,70 +39,54 @@
         </ul>
     </nav>
 
-    <div class="container" style="margin-top: 100px;">
+    <div class="container" style="margin-top: 60px;">
 
         <div class="row justify-content-center">
             <div class="col col-md-6">
                 <div class="row">
-                    <h3 style="color: black; margin-top: 5px;">Hasil Penilaian</h3>
                     <div class="col-sm-12">
-                        <h1 style="text-align: right;"><span class="badge badge-secondary text-right" style="background-color: limegreen; ">Januari 2022</span></h1>
+                        <h3 style="text-align: right;"><span class="badge badge-secondary text-right" style="background-color: limegreen; ">Januari 2022</span></h3>
                     </div>
 
                 </div>
-
-                <div class="card border-3">
-                    <a class="card-block text-decoration-none">
-
-                        <div class="card-body">
-                            <h2 class="card-title" style="color: black;"><b>Data Siswa</b></h2>
-                            <br>
-                            <table>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th> : </th>
-                                    <th>Putri Agustina</th>
-
-                                </tr>
-                                <tr>
-                                    <th>Kelas</th>
-                                    <th> : </th>
-                                    <th>12 B</th>
-                                </tr>
-                                <tr>
-                                    <th>No. Absen</th>
-                                    <th> : </th>
-                                    <th>06</th>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
+                <h3 style="color: black; margin-top: 5px;">Hasil Penilaian Karakter</h3>
+                <div class="row border-dark">
+                    <div class="col-sm-12">
+                        <h1 style="text-align: center;"><span class="badge badge-warning text-right">Sangat Baik</span></h1>
+                    </div>
                 </div>
-                <hr>
-                <div class="card mb-4">
+
+                <div class="card border-dark mb-4">
                     <div class="card-body">
-                        <h4 class="card-title"><u>Hasil penilaian karakter</u></h4>
-                        <br>
-                        <div class="row justify-content-center">
-                            <div class="col col-9">
-                                <div class="card bg-warning text-center text-white">
-                                    <div class="card-body">Sangat Baik</div>
-                                </div>
-                                <br>
-                                <div class="card bg-success text-center text-white">
-                                    <div class="card-body">Baik</div>
-                                </div>
-                                <br>
-                                <div class="card bg-success text-center text-white">
-                                    <div class="card-body">Cukup | Kurang</div>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <a href="skor-karakter.isi.keterangan.php" class="btn btn-outline-warning mt-5" style="border: 2px solid black;"><i>Klik Disini</i></a>
-                                </div>
-                            </div>
+                        <div class="isi">
+                            <h3>Definisi:</h3>
+                            <p>
+                                Ananda Amran mendapatkan skor ......
 
-
+                            </p>
                         </div>
+                    </div>
+                </div>
+                <div class="card border-dark mb-4">
+                    <div class="card-body">
+                        <div class="isi">
+                            <h3>Saran:</h3>
+                            <p>
+                                Ananda Amran mendapatkan skor ......
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-dark mb-4">
+                    <div class="card-body">
+                        <form action="">
+                            <textarea class="form-control"></textarea>
+                        </form>
+                        <div class="col col-12 text-center">
+                            <button class="btn btn-primary mt-2 text-center" type="button">Kirim Tanggapan</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
